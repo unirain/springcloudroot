@@ -17,6 +17,7 @@
         <module>eureka-server</module>
         <module>eureka-consumer</module>
         <module>eureka-client</module>
+        <module>zuul-server</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -34,8 +35,4 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-
-
-
 </project>

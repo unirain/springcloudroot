@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: zuul-server
+  cloud:
+    inetutils:
+      preferred-networks: 192.*
+server:
+  port: 31277
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8010/eureka/
+
+
+
+
+
+zuul:
+
+  routes:
+    test1:
+      #是否移除前缀
+      #如果stripPrefix 为true（默认为true,移除），则ip:port/zuul-test-one/showv1 就是访问 eureka-consumer里面的/showv1
+      #原因是stripPrefix运用局部的时候，只对path有效
+      #全局的时候 是对prefix有效
+      stripPrefix: false
+      path: /zuul-test-one/**
+      serviceId: eureka-consumer
+    test2:
+      #stripPrefix: true 则自动删除请求路径上的zuul-test-two，直接路由
+      stripPrefix: true
+      path: /zuul-test-two/**
+      serviceId: eureka-consumer
+  #自动上全局前缀
+  #http://127.0.0.1:31277/test/zuul-test-one/show-v1-->http://127.0.0.1:31277/zuul-test-one/show-v1
+  prefix: /test
+  #不移除前缀prefix，默认为移除
+  #strip-prefix: false

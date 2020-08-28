@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /********************************************************************************
  *
  * Title: 
@@ -64,4 +67,19 @@ public class conController {
         System.out.println("feign方式正在进行");
         return remoteService.dc();
     }
+
+    /**
+     * feign 调用
+     * @return
+     */
+    @GetMapping("/feign-consumer-v1")
+    public String fcv1(){
+        System.out.println("feign方式正在进行");
+        Map<String,String> map=new HashMap<>();
+        map.put("a","1");
+        map.put("b","2");
+       return remoteService.callInsertMap(map);
+    }
+
+
 }
