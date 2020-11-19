@@ -19,11 +19,12 @@ import org.springframework.context.annotation.Configuration;
  *
  *******************************************************************************/
 @Configuration
+//必须指定class，否则无法注册
 @EnableConfigurationProperties(DemoProperties.class)
 //prefix:property名称的前缀，可有可无
 //name ：数组，property完整名称或部分名称（可与prefix组合使用，组成完整的property名称），与value不可同时使用
 //havingValue:可与name组合使用，比较获取到的属性值与havingValue给定的值是否相同，相同才加载配置
-@ConditionalOnProperty(prefix = "demo",name = "isopen" ,havingValue = "true")
+//@ConditionalOnProperty(prefix = "demo",name = "isopen" ,havingValue = "true")
 public class DemoConfig {
     @Autowired
     private DemoProperties demoProperties;
