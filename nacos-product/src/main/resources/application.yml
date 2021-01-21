@@ -1,0 +1,9 @@
+nacos:
+  discovery:
+    server-addr: 127.0.0.1:8848
+    namespace: e29fbc04-aa1a-4e77-af75-afc860394b05
+server:
+  port: 8998
+spring:
+  application:
+    name: nacos-product

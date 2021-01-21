@@ -4,6 +4,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <name>nexus repository</name>
+            <url>http://srv.dataexa.com:8081/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
     <groupId>com.app.demo</groupId>
     <artifactId>spring-cloud-root</artifactId>
     <packaging>pom</packaging>
@@ -21,8 +35,14 @@
         <module>zuul-server</module>
         <module>consul-product</module>
         <module>mock-test</module>
-        <module>cat-test</module>
-        <module>pseudo-code</module>
+        <module>neo4j</module>
+        <module>nacos-product</module>
+        <module>nacos-config</module>
+        <module>mapstruct</module>
+        <module>sentinel</module>
+        <module>boot-websocket</module>
+        <module>spring-hook</module>
+        <module>boot-es</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
