@@ -21,7 +21,7 @@ public class EurekaServerApplication {
     /**
      * 让监听异步
      * 这个bean在哪里注入的呢
-     * {@link AbstractApplicationContext.initApplicationEventMulticaster();}
+//     * {@link AbstractApplicationContext.initApplicationEventMulticaster();}
      * @return
      */
     @Bean(name = "applicationEventMulticaster")

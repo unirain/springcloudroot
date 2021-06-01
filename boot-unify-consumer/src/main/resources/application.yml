@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: clm-app-unify
+  cloud:
+    inetutils:
+      preferred-networks: 10.20.*
+    nacos:
+      discovery:
+        server-addr: 192.168.3.2:8848
+  aop:
+    auto: true
+    proxy-target-class: true

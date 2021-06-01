@@ -1,6 +1,7 @@
 package com.example.eurekaserver;
 
 import com.example.startdemo.service.DemoService;
+import com.example.startdemo.service.Ds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,8 +23,10 @@ import java.util.Map;
  *******************************************************************************/
 @RestController
 public class Control {
-    @Autowired
+//    @Autowired
     private DemoService service;
+    @Autowired
+    private Ds ds;
 
     @GetMapping("/v1/test")
     public String get(){
